@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  nginx:
+    image: nginx:stable-alpine
+    container_name: nginxreverseproxy
+    # hostname: nginxreverseproxy
+    # restart: always
+    ports:
+      - 80:80
+      - 443:443
+    # volumes: 
+      # - ./nginx:/etc/nginx/conf.d/
+    volumes:
+      - ./nginx/srifintech.conf:/etc/nginx/nginx.conf
+    # networks:
+    #   - dev
